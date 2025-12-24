@@ -27,7 +27,7 @@ function ProviderView() {
 
     return (
         <div className="provider_cards">
-			{ !loading && providers.map((provider) => (
+			{ !loading && providers && providers.map((provider) => (
 				<ProviderCard key={provider.name} name={provider.name} status={provider.status} service={provider.domain} errorMessage={provider.errorMessage} config={provider.values} />
 			)) }
 
