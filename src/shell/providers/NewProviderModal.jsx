@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import "./ProviderView.css";
 
-function NewProviderModal({ isOpen, onClose }) {
+function NewProviderModal({ reload, isOpen, onClose }) {
     const [profileName, setProfileName] = useState("");
     const [configOptions, setConfigOptions] = useState(null);
     const [selectedProvider, setSelectedProvider] = useState("");
@@ -57,6 +57,9 @@ function NewProviderModal({ isOpen, onClose }) {
             })
             .catch((error) => {
                 console.log("Error adding provider:", error);
+            })
+            .finally(() => {
+                reload(true);
             });
     }
 

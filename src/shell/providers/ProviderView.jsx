@@ -14,7 +14,7 @@ function ProviderView() {
         axios.get("http://localhost:8080/range-api/v1/profile/providers", { withCredentials: true })
             .then((response) => {
                 console.log("Fetched providers:", response.data);
-                setProviders(response.data); 
+                setProviders(response.data);
             })
             .catch((error) => {
                 console.log("Error fetching providers:", error);
@@ -28,10 +28,10 @@ function ProviderView() {
     return (
         <div className="provider_cards">
 			{ !loading && providers && providers.map((provider) => (
-				<ProviderCard key={provider.name} name={provider.name} status={provider.status} service={provider.domain} errorMessage={provider.errorMessage} config={provider.values} />
+				<ProviderCard key={provider.name} reload={setLoading} name={provider.name} status={provider.status} service={provider.domain} errorMessage={provider.errorMessage} config={provider.values} />
 			)) }
 
-            <NewProviderCard />
+            <NewProviderCard reload={setReloadFlag} />
 		</div>
     );
 }

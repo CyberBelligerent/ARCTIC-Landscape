@@ -109,7 +109,7 @@
 	padding-left: 25px;
 }
 
-.provider_status.enabled::before {
+.provider_status.Enabled::before {
 	content:"\A";
     width:10px;
     height:10px;
@@ -119,7 +119,7 @@
     margin:0 10px;
 }
 
-.provider_status.loaded::before {
+.provider_status.Loaded::before {
 	content:"\A";
     width:10px;
     height:10px;
@@ -129,7 +129,7 @@
     margin:0 10px;
 }
 
-.provider_status.error::before {
+.provider_status.Error::before {
 	content:"\A";
     width:10px;
     height:10px;
